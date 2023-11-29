@@ -2,7 +2,7 @@
 //  DetailViewModel.swift
 //  MVVCEsdla
 //
-//  Created by Daniel Serrano on 14/10/23.
+//  Created by Daniel Serrano on 10/11/23.
 //
 
 import Foundation
