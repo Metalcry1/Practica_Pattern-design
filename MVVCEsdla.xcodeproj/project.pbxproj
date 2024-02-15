@@ -22,6 +22,8 @@
 		941002482ACEB5270044EB95 /* ImageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941002472ACEB5260044EB95 /* ImageCellModel.swift */; };
 		941002582ACECC9C0044EB95 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941002562ACECC9C0044EB95 /* DetailViewController.xib */; };
 		948169F72ACEE97C00AF8359 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948169F62ACEE97C00AF8359 /* DetailViewController.swift */; };
+		94D1ECE22B7E134600084DA1 /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1ECE12B7E134600084DA1 /* Mappers.swift */; };
+		94D1ECE42B7E19E900084DA1 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1ECE32B7E19E900084DA1 /* DetailModel.swift */; };
 		94F0E6092ACED52C00D9091C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F0E6072ACED52C00D9091C /* HomeTableViewController.swift */; };
 		94F0E60A2ACED52C00D9091C /* HomeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F0E6082ACED52C00D9091C /* HomeTableViewController.xib */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		941002472ACEB5260044EB95 /* ImageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellModel.swift; sourceTree = "<group>"; };
 		941002562ACECC9C0044EB95 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		948169F62ACEE97C00AF8359 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		94D1ECE12B7E134600084DA1 /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
+		94D1ECE32B7E19E900084DA1 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		94F0E6072ACED52C00D9091C /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		94F0E6082ACED52C00D9091C /* HomeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +102,7 @@
 				947A9ABB2AD3224D0061DD58 /* App */,
 				9410021F2ACD55B70044EB95 /* Assets.xcassets */,
 				941002492ACEC7E80044EB95 /* Domain */,
+				94D1ECE02B7E131200084DA1 /* Utils */,
 				946688402B02AA7200E61E62 /* UI */,
 			);
 			path = MVVCEsdla;
@@ -165,20 +170,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		9410023E2ACEAD500044EB95 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				941002472ACEB5260044EB95 /* ImageCellModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9410023F2ACEAD790044EB95 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				941002402ACEAD8D0044EB95 /* HomeCellTableViewCell.swift */,
 				941002412ACEAD8D0044EB95 /* HomeCellTableViewCell.xib */,
-				9410023E2ACEAD500044EB95 /* Model */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -187,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				941002442ACEB18F0044EB95 /* CharacterModel.swift */,
+				941002472ACEB5260044EB95 /* ImageCellModel.swift */,
+				94D1ECE32B7E19E900084DA1 /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +240,14 @@
 				941002182ACD55B50044EB95 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		94D1ECE02B7E131200084DA1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				94D1ECE12B7E134600084DA1 /* Mappers.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				948169F72ACEE97C00AF8359 /* DetailViewController.swift in Sources */,
+				94D1ECE42B7E19E900084DA1 /* DetailModel.swift in Sources */,
 				9410022C2ACD57C60044EB95 /* SplashLaunchViewController.swift in Sources */,
 				940B34452ADAF82B00AE9133 /* HomeTableViewModel.swift in Sources */,
 				941002172ACD55B50044EB95 /* AppDelegate.swift in Sources */,
@@ -326,6 +333,7 @@
 				941002422ACEAD8D0044EB95 /* HomeCellTableViewCell.swift in Sources */,
 				941002192ACD55B50044EB95 /* SceneDelegate.swift in Sources */,
 				94F0E6092ACED52C00D9091C /* HomeTableViewController.swift in Sources */,
+				94D1ECE22B7E134600084DA1 /* Mappers.swift in Sources */,
 				941002482ACEB5270044EB95 /* ImageCellModel.swift in Sources */,
 				941002452ACEB18F0044EB95 /* CharacterModel.swift in Sources */,
 				941002322ACD60F60044EB95 /* SplashLaunchViewModel.swift in Sources */,

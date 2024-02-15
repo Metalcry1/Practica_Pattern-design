@@ -8,26 +8,26 @@
 import Foundation
 
 protocol DetailViewModelProtocol {
-    func updateView(charData: CharacterModel?)
+    func updateView()
 }
 
 final class DetailViewModel {
 
-    private var viewDelegate: DetailViewProtocol?
-    private var charData: CharactersModel?
+    private var characterData: DetailModel
+    private weak var viewDelegate: DetailViewProtocol?
 
-    init(charData: CharactersModel?, viewDelegate: DetailViewProtocol?) {
-        self.charData = charData
+    init(data: DetailModel, viewDelegate: DetailViewProtocol?) {
+        characterData = data
         self.viewDelegate = viewDelegate
     }
 }
 
 extension DetailViewModel: DetailViewModelProtocol {
-    func updateView(charData: CharacterModel?) {
-        viewDelegate?.update(name: charData?.name)
-        viewDelegate?.update(image: charData?.image)
-        viewDelegate?.update(description: charData?.description)
-        viewDelegate?.update(job: charData?.job)
+    func updateView() {
+        viewDelegate?.update(name: characterData.name)
+        viewDelegate?.update(image: characterData.image)
+        viewDelegate?.update(description: characterData.description)
+        viewDelegate?.update(job: characterData.job)
     }
 }
 

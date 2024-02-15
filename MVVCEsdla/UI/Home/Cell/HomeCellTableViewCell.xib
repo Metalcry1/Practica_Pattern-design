@@ -24,12 +24,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="288" height="378"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGf-1X-o77">
-                                <rect key="frame" x="100.33333333333334" y="331" width="87.333333333333343" height="37"/>
+                                <rect key="frame" x="100.33333333333334" y="0.0" width="87.333333333333343" height="37"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-6" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMw-R3-Ffy" userLabel="Race Cell Home">
+                                <rect key="frame" x="10" y="357" width="268" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                                <color key="textColor" systemColor="systemBrownColor"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14923420548439026" green="0.20498943328857422" blue="0.23865681886672974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,7 +45,11 @@
                             <constraint firstAttribute="bottom" secondItem="c9B-JH-QCr" secondAttribute="bottom" id="LZj-r9-aig"/>
                             <constraint firstItem="c9B-JH-QCr" firstAttribute="leading" secondItem="z5N-5N-gp0" secondAttribute="leading" id="M54-qt-i1G"/>
                             <constraint firstItem="c9B-JH-QCr" firstAttribute="top" secondItem="z5N-5N-gp0" secondAttribute="top" id="VwQ-wg-csm"/>
-                            <constraint firstAttribute="bottom" secondItem="zGf-1X-o77" secondAttribute="bottom" constant="10" id="moM-W4-cij"/>
+                            <constraint firstAttribute="bottom" secondItem="VMw-R3-Ffy" secondAttribute="bottom" id="X9J-q5-ugq"/>
+                            <constraint firstItem="VMw-R3-Ffy" firstAttribute="leading" secondItem="z5N-5N-gp0" secondAttribute="leading" constant="10" id="daR-4O-AxM"/>
+                            <constraint firstItem="VMw-R3-Ffy" firstAttribute="top" secondItem="zGf-1X-o77" secondAttribute="bottom" constant="320" id="gAb-OH-QGq"/>
+                            <constraint firstAttribute="bottom" secondItem="zGf-1X-o77" secondAttribute="bottom" constant="341" id="moM-W4-cij"/>
+                            <constraint firstAttribute="trailing" secondItem="VMw-R3-Ffy" secondAttribute="trailing" constant="10" id="qeH-uY-mlA"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -55,6 +65,7 @@
             <connections>
                 <outlet property="imageCellHome" destination="c9B-JH-QCr" id="bCi-TN-Vcn"/>
                 <outlet property="nameCellHome" destination="zGf-1X-o77" id="PAM-yN-gdO"/>
+                <outlet property="raceCelHome" destination="VMw-R3-Ffy" id="WTn-NM-GF2"/>
                 <outlet property="viewCellHome" destination="z5N-5N-gp0" id="Aeq-zO-qEn"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
@@ -62,7 +73,7 @@
     </objects>
     <resources>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

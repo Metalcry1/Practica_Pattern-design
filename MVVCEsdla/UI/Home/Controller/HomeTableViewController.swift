@@ -8,7 +8,8 @@
 import UIKit
 
 protocol HomeTableViewProtocol: AnyObject {
-    func goToDetail(with data: CharacterModel?)
+    func updateViews()
+    func goToDetail(with data: DetailModel?)
 }
 
 class HomeTableViewController: UITableViewController {
@@ -36,34 +37,32 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCellTableViewCell else {
-            return UITableViewCell()
+                    return UITableViewCell()
         }
-        
-        if indexPath.row < sampleCharacterData.count {
-            let charData = sampleCharacterData[indexPath.row]
-            let homeData = ImageCellModel(image: charData.image, name: charData.name)
-            cell.updateViews(data: homeData)
+        if let data = viewModel?.data(at: indexPath.row) {
+            cell.updateViews(data: data)
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = DetailViewController()
-
-        if indexPath.row < sampleCharacterData.count {
-            nextVC.characterData = [sampleCharacterData[indexPath.row]]
-        }
-        navigationController?.pushViewController(nextVC, animated: true)
+        viewModel?.onItemSelected(at: indexPath.row)
     }
 }
 
 // MARK: - EXTENSION
 
 extension HomeTableViewController: HomeTableViewProtocol {
-    func goToDetail(with charData: CharacterModel?) {
-        guard let charData = charData else { return }
+    
+    func updateViews() {
+        tableView.reloadData()
+    }
+    
+    func goToDetail(with data: DetailModel?) {
+        guard let data = data else { return }
         let detailVC = DetailViewController()
-        detailVC.characterData = [charData]
+        let detailVM = DetailViewModel(data:data, viewDelegate: detailVC )
+        detailVC.viewModel = detailVM
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

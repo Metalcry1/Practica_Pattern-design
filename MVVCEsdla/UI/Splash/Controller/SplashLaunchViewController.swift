@@ -48,17 +48,15 @@ extension SplashLaunchViewController: SplashLaunchViewProtocol{
         switch show{
         case true where !activityIndicator.isAnimating:
             activityIndicator.startAnimating()
-            //print("entro")
         case false where activityIndicator.isAnimating:
             activityIndicator.stopAnimating()
-            // print("salgo")
         default: break
         }
     }
     
     func goToHome() {
         let homeVC = HomeTableViewController()
-        homeVC.viewModel = HomeTableViewModel(viewDelegate: homeVC)
+        homeVC.viewModel = HomeTableViewModel(viewDelegate: homeVC, mapperHome: MapperToHome())
         navigationController?.setViewControllers([homeVC], animated: true)
     }
     

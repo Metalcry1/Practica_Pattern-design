@@ -14,18 +14,19 @@ class HomeCellTableViewCell: UITableViewCell {
     @IBOutlet weak var nameCellHome: UILabel!
     @IBOutlet weak var imageCellHome: UIImageView!
     @IBOutlet weak var viewCellHome: UIView!
+    @IBOutlet weak var raceCelHome: UILabel!
     
     //MARK: - LIFECYCLE -
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewCellHome.layer.cornerRadius = 4.0
+        viewCellHome.layer.cornerRadius = 9.0
         viewCellHome.layer.shadowColor = UIColor.gray.cgColor
         viewCellHome.layer.shadowOffset = .zero
         viewCellHome.layer.shadowOpacity = 0.7
         viewCellHome.layer.shadowRadius = 4.0
         
-        imageCellHome.layer.cornerRadius = 4.0
+        imageCellHome.layer.cornerRadius = 9.0
         imageCellHome.layer.opacity = 0.7
     }
     
@@ -33,12 +34,14 @@ class HomeCellTableViewCell: UITableViewCell {
         super.prepareForReuse()
         imageCellHome.image = nil
         nameCellHome.text = nil
+        raceCelHome.text = nil
     }
     
-    func updateViews(data: ImageCellModel?){
+    func updateViews(data: CharacterModel?){
         guard let data = data else {return}
-        update(name: data.name)
         update(image: data.image)
+        update(name: data.name)
+        update(race: data.race)
     }
     
     func update(name: String){
@@ -47,6 +50,10 @@ class HomeCellTableViewCell: UITableViewCell {
     
     func update(image: String?){
         imageCellHome.image = UIImage(named:  image ?? "")
+    }
+    
+    func update(race: String){
+        raceCelHome.text = "Race: " + race
     }
     
     

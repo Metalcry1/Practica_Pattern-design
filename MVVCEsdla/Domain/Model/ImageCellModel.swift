@@ -9,5 +9,4 @@ import Foundation
 
 struct ImageCellModel{
     var image: String?
-    var name: String
 }

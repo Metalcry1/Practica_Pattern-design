@@ -16,7 +16,7 @@ protocol DetailViewProtocol: AnyObject {
 
 class DetailViewController: UIViewController {
 
-    var characterData: CharactersModel?
+    var characterData: CharacterModel?
     var viewModel: DetailViewModelProtocol?
 
     @IBOutlet weak var imageDetail: UIImageView!
@@ -26,8 +26,8 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = DetailViewModel(charData: characterData, viewDelegate: self)
-        viewModel?.updateView(charData: characterData?.first)
+        viewModel?.updateView()
+        self.title = "Detail Character"
     }
 }
 
